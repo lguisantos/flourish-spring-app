@@ -26,7 +26,7 @@ const style = StyleSheet.create({
     },
 
     titleHeader: {
-        marginRight: 150,
+        marginRight: 175,
         fontSize: 20,
         fontWeight: 'bold',
         color: '#449aa4'

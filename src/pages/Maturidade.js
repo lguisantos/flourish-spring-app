@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 // Estilos
-import Style from '../css/HomeStyle'
+import Style from '../css/MaturidadeStyle'
 
 // Imagens
 import Porquinho from '../images/porquinho.png'
@@ -15,7 +15,7 @@ import Moeda from '../images/moeda.png';
 import Nota from '../images/nota.png'
 
 let menuState = 'menu'
-export default function ModuloMaturidade({navigation}) {
+export default function ModuloMaturidade({ navigation }) {
 
     function navigationToMap() {
         navigation.navigate('Mapa');
@@ -63,6 +63,11 @@ export default function ModuloMaturidade({navigation}) {
                     </View>
                 </View>
             </View>
+
+            <View style={Style.body}>
+
+            </View>
+
 
             {/* Footer */}
             <View style={Style.footer}>

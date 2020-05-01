@@ -26,7 +26,7 @@ const style = StyleSheet.create({
     },
 
     titleHeader: {
-        marginRight: 150,
+        marginRight: 170,
         fontSize: 20,
         fontWeight: 'bold',
         color: '#449aa4'
@@ -37,7 +37,6 @@ const style = StyleSheet.create({
         fontSize: 30,
         color: '#449aa4'
     },
-
 
     footer: {
         backgroundColor: '#5ec65b',

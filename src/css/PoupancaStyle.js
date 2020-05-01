@@ -38,7 +38,6 @@ const style = StyleSheet.create({
         color: '#449aa4'
     },
 
-
     footer: {
         backgroundColor: '#5ec65b',
         width: width,

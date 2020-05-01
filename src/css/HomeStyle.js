@@ -11,8 +11,8 @@ const style = StyleSheet.create({
         backgroundColor: '#f2f2f2',
         paddingHorizontal: 0,
         padding: Constant.statusBarHeight,
-        justifyContent: 'space-between',
-        height: height
+        height: height,
+        justifyContent: 'flex-start',
     },
 
     header: {
@@ -20,22 +20,23 @@ const style = StyleSheet.create({
         height: 80,
         backgroundColor: '#daf8cf',
         width: width,
-        justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'space-between'
     },
 
     titleHeader: {
-        marginRight: 150,
+        marginRight: 175,
         fontSize: 20,
         fontWeight: 'bold',
         color: '#449aa4'
     },
 
     arrow: {
-        marginRight: 130,
+        marginLeft: 30,
         fontSize: 30,
         color: '#449aa4'
     },
+
 
     footer: {
         backgroundColor: '#5ec65b',
@@ -56,7 +57,8 @@ const style = StyleSheet.create({
     containerMoney: {
         flexDirection: 'row-reverse',
         width: width,
-        marginBottom: 500
+        justifyContent: 'flex-start'
+        // marginBottom: 500
     },
 
     containerImgMoney: {
@@ -71,7 +73,7 @@ const style = StyleSheet.create({
     containerMenuMoney: {
         width: 90,
         height: 40,
-        backgroundColor:'#fff',
+        backgroundColor: '#fff',
         borderRadius: 30,
         justifyContent: 'center',
         justifyContent: 'space-between',
@@ -79,10 +81,10 @@ const style = StyleSheet.create({
         flexDirection: 'row',
     },
 
-    containerMenuNota:{
+    containerMenuNota: {
         width: 160,
         height: 35,
-        backgroundColor:'#fff',
+        backgroundColor: '#fff',
         borderRadius: 30,
         justifyContent: 'center',
         justifyContent: 'space-between',
@@ -112,15 +114,13 @@ const style = StyleSheet.create({
         justifyContent: 'space-around',
         marginBottom: 40
     },
-    valor:{
+    valor: {
         marginRight: 5,
         fontSize: 20,
         fontWeight: 'bold'
-    }, 
-    FlatList:{
-       width: width,
-       backgroundColor: '#000',
-       height: height
+    },
+    body:{
+        flex:1
     }
 });
 

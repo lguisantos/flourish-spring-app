@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 // Estilos
-import Style from '../css/HomeStyle'
+import Style from '../css/GameStyle'
 
 // Imagens
 import Porquinho from '../images/porquinho.png'
@@ -62,6 +62,9 @@ export default function ModuloGame({ navigation }) {
                 </View>
             </View>
 
+<View style={Style.body}>
+
+</View>
             {/* Footer */}
             <View style={Style.footer}>
                 <View style={Style.menuFooter}>

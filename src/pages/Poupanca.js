@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 // Estilos
-import Style from '../css/HomeStyle'
+import Style from '../css/PoupancaStyle'
 
 // Imagens
 import Porquinho from '../images/porquinho.png'
@@ -14,7 +14,7 @@ import Trofeu from '../images/trofeu.png'
 import Moeda from '../images/moeda.png';
 import Nota from '../images/nota.png'
 
-export default function ModuloPoupanca({navigation}) {
+export default function ModuloPoupanca({ navigation }) {
     const menuState = 'menu'
 
     function navigationToMap() {
@@ -60,6 +60,11 @@ export default function ModuloPoupanca({navigation}) {
                     </View>
                 </View>
             </View>
+
+            <View style={Style.body}>
+
+            </View>
+
 
             {/* Footer */}
             <View style={Style.footer}>

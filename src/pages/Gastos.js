@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 // Estilos
-import Style from '../css/HomeStyle'
+import Style from '../css/GastosStyle'
 
 // Imagens
 import Porquinho from '../images/porquinho.png'
@@ -36,7 +36,7 @@ export default function ModuloGastos({ navigation }) {
 
             {/* Top */}
             <View style={Style.header}>
-                <TouchableOpacity onPress={()=>{navigation.openDrawer()}}>
+                <TouchableOpacity onPress={() => { navigation.openDrawer() }}>
                     <Feather name={menuState}
                         color="#000"
                         style={Style.arrow} />
@@ -63,6 +63,10 @@ export default function ModuloGastos({ navigation }) {
 
                     </View>
                 </View>
+            </View>
+
+            <View style={Style.body}>
+
             </View>
 
             {/* Footer */}

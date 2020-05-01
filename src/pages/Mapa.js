@@ -4,7 +4,7 @@ import { View, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-import Style from '../css/HomeStyle'
+import Style from '../css/MapaStyle'
 import Porquinho from '../images/porquinho.png'
 import Mapa from '../images/local.png';
 import Trofeu from '../images/trofeu.png'
@@ -56,6 +56,11 @@ export default function ModuloMapa({navigation}) {
                     </View>
                 </View>
             </View>
+
+            <View style={Style.body}>
+
+</View>
+
 
             {/* Footer */}
             <View style={Style.footer}>
