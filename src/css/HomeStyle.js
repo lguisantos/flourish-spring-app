@@ -25,14 +25,14 @@ const style = StyleSheet.create({
     },
 
     titleHeader: {
-        marginRight: 100,
+        marginRight: 150,
         fontSize: 20,
         fontWeight: 'bold',
         color: '#449aa4'
     },
 
     arrow: {
-        marginRight: 80,
+        marginRight: 130,
         fontSize: 30,
         color: '#449aa4'
     },
@@ -116,6 +116,11 @@ const style = StyleSheet.create({
         marginRight: 5,
         fontSize: 20,
         fontWeight: 'bold'
+    }, 
+    FlatList:{
+       width: width,
+       backgroundColor: '#000',
+       height: height
     }
 });
 

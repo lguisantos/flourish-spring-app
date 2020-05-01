@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Feather } from '@expo/vector-icons';
 import { View, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
@@ -11,6 +11,7 @@ import Trofeu from '../images/trofeu.png'
 import Moeda from '../images/moeda.png';
 import Nota from '../images/nota.png'
 
+let menuState = 'menu'
 export default function ModuloMapa() {
 
     const navigation = useNavigation();
@@ -22,14 +23,24 @@ export default function ModuloMapa() {
     function navigationToPoupanca() {
         navigation.navigate('Poupanca')
     }
+    const [menu, setMenu] = useState(false)
+
+    function menuButton() {
+        setMenu(!menu);
+        menuState = menu == false ? 'x' : 'menu' 
+    }
+
     return (
+
         // Container global
         <View style={Style.container}>
 
             {/* Top */}
             <View style={Style.header}>
-                <TouchableOpacity>
-                    <Feather name="chevrons-left" color="#000" style={Style.arrow} />
+                <TouchableOpacity onPress={menuButton}>
+                    <Feather name={menuState}
+                        color="#000"
+                        style={Style.arrow} />
                 </TouchableOpacity>
                 <Text style={Style.titleHeader}>
                     Mapa
@@ -50,7 +61,6 @@ export default function ModuloMapa() {
                             <Image source={Moeda} style={Style.ImgMoney} />
                             <Text style={Style.valor}>0</Text>
                         </View>
-
                     </View>
                 </View>
             </View>
