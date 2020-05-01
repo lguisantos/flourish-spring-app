@@ -14,11 +14,9 @@ import Trofeu from '../images/trofeu.png'
 import Moeda from '../images/moeda.png';
 import Nota from '../images/nota.png'
 
-let menuState = 'menu'
 
-export default function ModuloPoupanca() {
-
-    const navigation = useNavigation();
+export default function ModuloGame({ navigation }) {
+    const menuState = 'menu'
 
     function navigationToMap() {
         navigation.navigate('Mapa');
@@ -26,12 +24,6 @@ export default function ModuloPoupanca() {
 
     function navigationToPoupanca() {
         navigation.navigate('Poupanca')
-    }
-    const [menu, setMenu] = useState(false)
-
-    function menuButton() {
-        setMenu(!menu);
-        menuState = menu == false ? 'x' : 'menu' 
     }
 
     return (
@@ -41,7 +33,7 @@ export default function ModuloPoupanca() {
 
             {/* Top */}
             <View style={Style.header}>
-                <TouchableOpacity onPress={menuButton}>
+                <TouchableOpacity onPress={() => navigation.openDrawer()}>
                     <Feather name={menuState}
                         color="#000"
                         style={Style.arrow} />

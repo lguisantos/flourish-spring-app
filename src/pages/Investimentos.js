@@ -4,8 +4,6 @@ import { View, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity, FlatList } from 'react-native-gesture-handler';
 
-import Drawer from './Drawer';
-
 // Estilos
 import Style from '../css/HomeStyle'
 
@@ -17,9 +15,7 @@ import Moeda from '../images/moeda.png';
 import Nota from '../images/nota.png'
 
 let menuState = 'menu'
-export default function ModuloHome() {
-
-    const navigation = useNavigation();
+export default function ModuloInvestimentos({navigation}) {
 
     function navigationToMap() {
         navigation.navigate('Mapa');
@@ -32,12 +28,6 @@ export default function ModuloHome() {
     function navigationToPoupanca() {
         navigation.navigate('Poupanca')
     }
-    const [menu, setMenu] = useState(false)
-
-    function menuButton() {
-        setMenu(!menu);
-        menuState = menu == false ? 'x' : 'menu' 
-    }
 
     return (
 
@@ -46,7 +36,7 @@ export default function ModuloHome() {
 
             {/* Top */}
             <View style={Style.header}>
-                <TouchableOpacity onPress={menuButton}>
+                <TouchableOpacity onPress={() => navigation.openDrawer()}>
                     <Feather name={menuState}
                         color="#000"
                         style={Style.arrow} />
@@ -75,15 +65,26 @@ export default function ModuloHome() {
                 </View>
             </View>
 
-            <FlatList data={[1,2]}
-                      style={Style.FlatList}
-                      showsVerticalScrollIndicator={false}
-                      keyExtractor={incident => String(incident)}
-                      renderItem={() => (
-                        
-                              <Text>Teste</Text>
-                      
-                      )}>
+            <FlatList data={[1, 2]}
+                style={Style.FlatList}
+                showsVerticalScrollIndicator={false}
+                keyExtractor={incident => String(incident)}
+                renderItem={() => (
+                    <View style={{
+                        incident: {
+                            padding: 24,
+                            backgroundColor: '#3ff4',
+                            borderRadius: 8,
+                            marginBottom: 16,
+                            justifyContent: 'center',
+                            height: 150
+                        },
+                    }}>
+                        <Text>
+                            Lucas teste
+                        </Text>
+                    </View>
+                )}>
             </FlatList>
 
             {/* Footer */}

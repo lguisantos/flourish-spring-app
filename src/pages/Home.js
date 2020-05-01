@@ -3,8 +3,7 @@ import { Feather } from '@expo/vector-icons';
 import { View, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { DrawerActions } from '@react-navigation/drawer'
-
+import { isDrawerOpen, DrawerActions } from '@react-navigation/drawer'
 // Estilos
 import Style from '../css/HomeStyle'
 
@@ -15,12 +14,8 @@ import Trofeu from '../images/trofeu.png'
 import Moeda from '../images/moeda.png';
 import Nota from '../images/nota.png'
 
-let menuState = 'menu';
-
-export default function ModuloHome() {
-
-    const navigation = useNavigation();
-
+export default function ModuloHome({ navigation }) {
+    const menuState = 'menu'
 
     function navigationToMap() {
         navigation.navigate('Mapa');
@@ -33,12 +28,6 @@ export default function ModuloHome() {
     function navigationToPoupanca() {
         navigation.navigate('Poupanca')
     }
-    const [menu, setMenu] = useState(false)
-
-    function menuButton() {
-        setMenu(!menu);
-        menuState = menu == false ? 'x' : 'menu'
-    }
 
     return (
 
@@ -47,7 +36,7 @@ export default function ModuloHome() {
 
             {/* Top */}
             <View style={Style.header}>
-                <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
+                <TouchableOpacity onPress={() => navigation.openDrawer()}>
                     <Feather name={menuState}
                         color="#000"
                         style={Style.arrow} />
@@ -56,7 +45,6 @@ export default function ModuloHome() {
                     Home
                 </Text>
             </View>
-
 
             {/* Valor da Moeda lateral Direita */}
             <View style={Style.containerMoney}>

@@ -12,9 +12,7 @@ import Moeda from '../images/moeda.png';
 import Nota from '../images/nota.png'
 
 let menuState = 'menu'
-export default function ModuloMapa() {
-
-    const navigation = useNavigation();
+export default function ModuloMapa({navigation}) {
 
     function navigationToGame() {
         navigation.navigate('Game')
@@ -22,12 +20,6 @@ export default function ModuloMapa() {
 
     function navigationToPoupanca() {
         navigation.navigate('Poupanca')
-    }
-    const [menu, setMenu] = useState(false)
-
-    function menuButton() {
-        setMenu(!menu);
-        menuState = menu == false ? 'x' : 'menu' 
     }
 
     return (
@@ -37,7 +29,7 @@ export default function ModuloMapa() {
 
             {/* Top */}
             <View style={Style.header}>
-                <TouchableOpacity onPress={menuButton}>
+                <TouchableOpacity onPress={() => navigation.openDrawer()}>
                     <Feather name={menuState}
                         color="#000"
                         style={Style.arrow} />
