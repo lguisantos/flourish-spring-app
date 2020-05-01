@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { View, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
-import { TouchableOpacity } from 'react-native-gesture-handler';
-
-import Drawer from './Drawer';
+import { TouchableOpacity, FlatList } from 'react-native-gesture-handler';
 
 // Estilos
 import Style from '../css/HomeStyle'
@@ -16,9 +14,8 @@ import Trofeu from '../images/trofeu.png'
 import Moeda from '../images/moeda.png';
 import Nota from '../images/nota.png'
 
-export default function ModuloHome() {
-
-    const navigation = useNavigation();
+let menuState = 'menu'
+export default function ModuloInvestimentos({navigation}) {
 
     function navigationToMap() {
         navigation.navigate('Mapa');
@@ -31,20 +28,21 @@ export default function ModuloHome() {
     function navigationToPoupanca() {
         navigation.navigate('Poupanca')
     }
+
     return (
-        
+
         // Container global
         <View style={Style.container}>
 
             {/* Top */}
             <View style={Style.header}>
-                <TouchableOpacity>
-                    <Feather name="chevrons-left" 
-                    color="#000" 
-                    style={Style.arrow}/>
+                <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                    <Feather name={menuState}
+                        color="#000"
+                        style={Style.arrow} />
                 </TouchableOpacity>
                 <Text style={Style.titleHeader}>
-                    Home
+                    Investimentos
                 </Text>
             </View>
 
@@ -66,6 +64,28 @@ export default function ModuloHome() {
                     </View>
                 </View>
             </View>
+
+            <FlatList data={[1, 2]}
+                style={Style.FlatList}
+                showsVerticalScrollIndicator={false}
+                keyExtractor={incident => String(incident)}
+                renderItem={() => (
+                    <View style={{
+                        incident: {
+                            padding: 24,
+                            backgroundColor: '#3ff4',
+                            borderRadius: 8,
+                            marginBottom: 16,
+                            justifyContent: 'center',
+                            height: 150
+                        },
+                    }}>
+                        <Text>
+                            Lucas teste
+                        </Text>
+                    </View>
+                )}>
+            </FlatList>
 
             {/* Footer */}
             <View style={Style.footer}>

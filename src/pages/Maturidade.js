@@ -4,8 +4,6 @@ import { View, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-import Drawer from './Drawer';
-
 // Estilos
 import Style from '../css/HomeStyle'
 
@@ -16,9 +14,8 @@ import Trofeu from '../images/trofeu.png'
 import Moeda from '../images/moeda.png';
 import Nota from '../images/nota.png'
 
-export default function ModuloHome() {
-
-    const navigation = useNavigation();
+let menuState = 'menu'
+export default function ModuloMaturidade({navigation}) {
 
     function navigationToMap() {
         navigation.navigate('Mapa');
@@ -32,19 +29,19 @@ export default function ModuloHome() {
         navigation.navigate('Poupanca')
     }
     return (
-        
+
         // Container global
         <View style={Style.container}>
 
             {/* Top */}
             <View style={Style.header}>
-                <TouchableOpacity>
-                    <Feather name="chevrons-left" 
-                    color="#000" 
-                    style={Style.arrow}/>
+                <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                    <Feather name={menuState}
+                        color="#000"
+                        style={Style.arrow} />
                 </TouchableOpacity>
                 <Text style={Style.titleHeader}>
-                    Home
+                    Maturidade
                 </Text>
             </View>
 
