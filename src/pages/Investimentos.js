@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { View, Image, Text, SafeAreaView, StyleSheet } from 'react-native';
 import { TouchableOpacity, FlatList } from 'react-native-gesture-handler';
-import Constants from 'expo-constants';
+import { useNavigation } from '@react-navigation/native';
+
+import DetailInvest from './DetailInvest'
 
 // Estilos
 import Style from '../css/InvestStyle'
@@ -13,6 +15,7 @@ import Mapa from '../images/local.png';
 import Trofeu from '../images/trofeu.png'
 import Moeda from '../images/moeda.png';
 import Nota from '../images/nota.png'
+
 
 let menuState = 'menu'
 
@@ -45,13 +48,22 @@ const DATA = [
 ];
 
 function Item({ title }) {
+
+    const navigation = useNavigation();
+
+    const navigatorTo = () => {
+        navigation.navigate('Poupanca');
+    }
+
     return (
         <View style={Style.containerItem}>
             <Image source={Moeda} style={Style.ImgMoney} />
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => this.props.navigatorTo('Mapa'), {
+                nome: "Lucas"
+            }}>
                 <Text style={Style.Item}>{title}</Text>
             </TouchableOpacity>
-            <Feather name="arrow-right" style={{ fontSize: 20 }} />
+            <Feather name="arrow-right" style={{ fontSize: 20, marginRight: 30 }} />
         </View>
     );
 }
@@ -69,7 +81,6 @@ export default function ModuloInvestimentos({ navigation }) {
     function navigationToPoupanca() {
         navigation.navigate('Poupanca')
     }
-
     return (
 
         // Container global
@@ -113,11 +124,9 @@ export default function ModuloInvestimentos({ navigation }) {
                     keyExtractor={item => item.id}
                     renderItem={({ item }) =>
                         <Item title={item.title} />
-
                     }
                 />
             </View>
-
 
             {/* Footer */}
             <View style={Style.footer}>

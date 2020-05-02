@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, View, AppRegistry } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -15,10 +15,11 @@ import Routes from './src/routes';
 
 const Drawer = createDrawerNavigator();
 
+
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Investimentos">
+      <Drawer.Navigator initialRouteName="Gastos">
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="Game" component={Game} />
         <Drawer.Screen name="Gastos" component={Gastos} />
@@ -26,7 +27,6 @@ export default function App() {
         <Drawer.Screen name="Poupanca" component={Poupanca} />
         <Drawer.Screen name="Investimentos" component={Investimentos} />
         <Drawer.Screen name="Maturidade" component={Maturidade} />
-
       </Drawer.Navigator>
     </NavigationContainer>
   );

@@ -11,7 +11,7 @@ const style = StyleSheet.create({
         backgroundColor: '#f2f2f2',
         paddingHorizontal: 0,
         padding: Constant.statusBarHeight,
-
+ 
         height: height,
         justifyContent: 'flex-start',
     },
@@ -66,10 +66,14 @@ const style = StyleSheet.create({
         alignItems: 'center',
     },
 
+    textMenu: {
+
+    },
+
     containerMenuMoney: {
         width: 90,
         height: 40,
-        backgroundColor: '#fff',
+        backgroundColor:'#fff',
         borderRadius: 30,
         justifyContent: 'center',
         justifyContent: 'space-between',
@@ -77,10 +81,10 @@ const style = StyleSheet.create({
         flexDirection: 'row',
     },
 
-    containerMenuNota: {
+    containerMenuNota:{
         width: 160,
         height: 35,
-        backgroundColor: '#fff',
+        backgroundColor:'#fff',
         borderRadius: 30,
         justifyContent: 'center',
         justifyContent: 'space-between',
@@ -101,58 +105,22 @@ const style = StyleSheet.create({
         marginLeft: 10
     },
 
+    menuMoney: {
+
+    },
+
     menuFooter: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginBottom: 40
     },
-
-    valor: {
+    valor:{
         marginRight: 5,
         fontSize: 20,
         fontWeight: 'bold'
     },
-
-    body: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'space-around',
-    },
-
-    gastosControle: {
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        height: 70,
-        width: width,
-        alignItems: 'center',
-        backgroundColor: '#5ec65b',
-        marginBottom: 10,
-        borderRadius: 20
-    },
-
-    gastosControleSlider: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        width: width,
-        height: 70,
-        alignItems: 'center',
-        backgroundColor: '#5ec65b',
-        borderRadius: 20
-    },
-
-    slider: {
-        width: 300
-    },
-
-    slideConteinerText: {
-        backgroundColor: '#fff',
-        height: 50,
-        width: 50,
-        marginLeft: 15,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 15
-        
+    body:{
+        flex:1
     }
 });
 
