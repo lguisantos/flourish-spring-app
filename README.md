@@ -1,4 +1,7 @@
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Agualuza/flourish-spring-app) 
+#Flourish
+##Time 14
+####Ficamos entre as Top 10 ideias
+####Solução construída para o MegaHack Shawee
 
-# App-MegaHack
-App MegaHack
+Nosso aplicativo tem como objetivo ensinar os brasileiros a como poupar e investir seu dinheiro de forma divertida e intuitiva!
+
